@@ -38,5 +38,11 @@ export default class {
       console.log('The editor has lost focus');
       putDb(localStorage.getItem('content'));
     });
+
+    // Auto-save content to IndexedDB every 1 second
+    setInterval(() => {
+      console.log('Auto-saving content');
+      putDb(localStorage.getItem('content'));
+    }, 1000); 
   }
 }
